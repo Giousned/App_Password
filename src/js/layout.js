@@ -5,7 +5,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { Main } from "./views/main";
 import { MyPassword } from "./views/myPassword";
 
-import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -34,4 +33,4 @@ const Layout = () => {
 	);
 };
 
-export default injectContext(Layout);
+export default Layout;
