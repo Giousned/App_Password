@@ -1,12 +1,7 @@
 import React from "react";
-import { useState } from "react";
+
 
 const Checkbox = (props) => {
-  const [checked, setChecked] = useState(props.initiallyChecked);
-
-  console.log(checked);
-
-  const handleCheck = () => { setChecked(!checked);}
 
   return (
     <div>
@@ -14,9 +9,8 @@ const Checkbox = (props) => {
         <input
           className="form-check-input"
           type="checkbox"
-          value=""
-          onChange={handleCheck}
-          checked={checked}
+          onChange={props.handleCheckMajus ? props.handleCheckMajus : props.handleCheckNumbers ? props.handleCheckNumbers : props.handleCheckSymbols ? props.handleCheckSymbols : null}
+          checked={props.includeMajus ? props.includeMajus : props.includeNumbers ? props.includeNumbers : props.includeSymbols ? props.includeSymbols : null}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           {props.label}

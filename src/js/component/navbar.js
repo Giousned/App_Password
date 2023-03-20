@@ -11,8 +11,8 @@ export const Navbar = () => {
 				<Link to="/">
 					<button className="btn btn-primary">Home</button>
 				</Link>
-				<Link to="/password">
-					<button className="btn btn-primary">Contraseña guardada</button>
+				<Link to="/my-passwords">
+					<button className="btn btn-primary">Contraseñas guardadas</button>
 				</Link>
 			</div>
 		</nav>
