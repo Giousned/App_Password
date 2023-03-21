@@ -10,48 +10,42 @@ export const AppProvider = ({children}) => {
     const [includeSymbols, setIncludeSymbols] = useState(false);
 
     
-    const handleCheckMajus = () => { setIncludeMajus(!includeMajus);}
-    const handleCheckNumbers = () => { setIncludeNumbers(!includeNumbers);}
-    const handleCheckSymbols = () => { setIncludeSymbols(!includeSymbols);}
-
-    
     const upperCase = Array.from({ length: 26 }, (_, i) => String.fromCharCode(i + 65));
     const lowerCase = upperCase.map(char => char.toLowerCase());
     const numbers = Array.from({ length: 10 }, (_, i) => i);
     const symbols = ['*', '!', '.', '-', '#', '@']
 
 
-    const generarContraseña = ({
-          includeMajus,
-          includeNumbers,
-          includeSymbols,
-          passwordLength = 8
-      }) => {
-        const includedSets = [lowerCase];
-        if (includeMajus) includedSets.push(upperCase);
-        if (includeNumbers) includedSets.push(numbers);
-        if (includeSymbols) includedSets.push(symbols);
-
-        const passwordArray = [];
-
-        for (let i = passwordLength; i > 0; i--) {
-            const randomSet = Math.floor(Math.random() * includedSets.length);
-            const randomChar = Math.floor(Math.random() * includedSets[randomSet].length);
-
-            passwordArray.push(includedSets[randomSet][randomChar]);
-        };
-
-    return setValueContraseña(passwordArray.join(''));
-}
-
     const store = {
         valueContraseña,
         includeMajus,
         includeNumbers,
         includeSymbols
-        
     };
-    const actions = {};
+
+    const actions = {
+        handleCheckMajus: () => setIncludeMajus(!includeMajus),
+        handleCheckNumbers: () => setIncludeNumbers(!includeNumbers),
+        handleCheckSymbols: () => setIncludeSymbols(!includeSymbols),
+        handleValueContraseña: (valorContraseña) => setValueContraseña(valorContraseña),
+        generarContraseña: (includeMajus, includeNumbers, includeSymbols, passwordLength = 8) => {
+            const includedSets = [lowerCase];
+            if (includeMajus) includedSets.push(upperCase);
+            if (includeNumbers) includedSets.push(numbers);
+            if (includeSymbols) includedSets.push(symbols);
+    
+            const passwordArray = [];
+    
+            for (let i = passwordLength; i > 0; i--) {
+                const randomSet = Math.floor(Math.random() * includedSets.length);
+                const randomChar = Math.floor(Math.random() * includedSets[randomSet].length);
+    
+                passwordArray.push(includedSets[randomSet][randomChar]);
+            };
+    
+        return setValueContraseña(passwordArray.join(''));
+        }
+    };
 
     return (   
     <Context.Provider value={{store, actions}}>
@@ -62,3 +56,10 @@ export const AppProvider = ({children}) => {
 const useAppProvider = () => useContext(Context);
 
 export default useAppProvider;
+
+// {
+//     includeMajus,
+//     includeNumbers,
+//     includeSymbols,
+//     passwordLength = 8
+// }
