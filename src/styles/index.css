@@ -3,11 +3,13 @@
 */
 
 body{
-    background-image: url("https://us.123rf.com/450wm/neirfy/neirfy2210/neirfy221000124/192451426-planeta-del-mundo-alien%C3%ADgena-paisaje-del-espacio-profundo-con-varias-lunas.jpg?ver=6");
+    background-image: url("https://media0.giphy.com/media/fS9PCxQYG0ULu/giphy.gif");
     background-size: cover;
     color: aliceblue;
 }
-
+ .info{
+    background-color: green;
+ }
 .list-group-item{
     font-size: 20px;
     width: 300px;
@@ -25,4 +27,15 @@ body{
 .container{
     display: flex;
     justify-content: center;
+}
+.navbar,navbar-brand{
+    background-color: black;
+    color: white;
+
+}
+.home{
+    color: white;
+}
+.btn{
+    color: white;
 }
