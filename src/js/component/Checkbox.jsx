@@ -1,5 +1,7 @@
 import React from "react";
 
+import PropTypes from "prop-types";
+
 
 const Checkbox = (props) => {
 
@@ -20,3 +22,12 @@ const Checkbox = (props) => {
   );
 };
 export default Checkbox;
+
+Checkbox.propTypes = {
+	includeMajus: PropTypes.bool,
+	includeNumbers: PropTypes.bool,
+	includeSymbols: PropTypes.bool,
+  handleCheckMajus: PropTypes.func,
+  handleCheckNumbers: PropTypes.func,
+  handleCheckSymbols: PropTypes.func,
+};

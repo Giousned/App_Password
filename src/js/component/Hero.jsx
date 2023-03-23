@@ -1,10 +1,10 @@
 import React from "react";
 
-const Hero = () => {
+const Hero = (props) => {
   return (
-    <div className="bg-info mb-5">
-      <h1>Generador de Contraseñas</h1>
-      <p>Esta es una app para crear y guardar contraseña!</p>
+    <div className="bg-info mb-5 p-3">
+      <h1>{props.title}</h1>
+      <p>{props.subtitle}</p>
       <p>¡Genera tus contraseñas seguras en cuestión de segundos!</p>
     </div>
   );

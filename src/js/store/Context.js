@@ -5,12 +5,12 @@ import { createContext, useContext, useState } from "react";
 const Context = createContext();
 
 export const AppProvider = ({children}) => {
-
     const [valueContraseña, setValueContraseña] = useState("");
     const [includeMajus, setIncludeMajus] = useState(false);
     const [includeNumbers, setIncludeNumbers] = useState(false);
     const [includeSymbols, setIncludeSymbols] = useState(false);
     const [contraseñasSaved, setContraseñasSaved] = useState([]);
+    const [slider, setSlider] = useState(8);
 
     
     const upperCase = Array.from({ length: 26 }, (_, i) => String.fromCharCode(i + 65));
@@ -24,7 +24,8 @@ export const AppProvider = ({children}) => {
         includeMajus,
         includeNumbers,
         includeSymbols,
-        contraseñasSaved
+        contraseñasSaved,
+        slider
     };
 
     const actions = {
@@ -32,6 +33,7 @@ export const AppProvider = ({children}) => {
         handleCheckNumbers: () => setIncludeNumbers(!includeNumbers),
         handleCheckSymbols: () => setIncludeSymbols(!includeSymbols),
         handleValueContraseña: (valorContraseña) => setValueContraseña(valorContraseña),
+        handleChangeSlider: (valor) => setSlider(valor),
         generarContraseña: (includeMajus, includeNumbers, includeSymbols, passwordLength = 8) => {
             const includedSets = [lowerCase];
             if (includeMajus) includedSets.push(upperCase);

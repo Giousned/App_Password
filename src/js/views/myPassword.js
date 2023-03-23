@@ -13,13 +13,15 @@ export const MyPassword = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<Hero/>
+			<Hero title="Generador de Contraseñas" subtitle="Esta app guarda contraseñas y es super divertida!"/>
 			<h1>Contraseñas guardadas</h1>
 			{store.contraseñasSaved.map((item, index) => {
 				
 				return(
 					<List key={index}>
-						<ListItem text={item}/>
+						<ListItem>
+							{item}
+						</ListItem>
 					</List>);
 			})}
 			

@@ -2,6 +2,12 @@
     General Styles
 */
 
+body{
+    background-image: url("https://us.123rf.com/450wm/neirfy/neirfy2210/neirfy221000124/192451426-planeta-del-mundo-alien%C3%ADgena-paisaje-del-espacio-profundo-con-varias-lunas.jpg?ver=6");
+    background-size: cover;
+    color: aliceblue;
+}
+
 .list-group-item{
     font-size: 20px;
     width: 300px;
