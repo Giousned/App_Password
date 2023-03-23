@@ -34,7 +34,7 @@ export const AppProvider = ({children}) => {
         handleCheckSymbols: () => setIncludeSymbols(!includeSymbols),
         handleValueContraseña: (valorContraseña) => setValueContraseña(valorContraseña),
         handleChangeSlider: (valor) => setSlider(valor),
-        generarContraseña: (includeMajus, includeNumbers, includeSymbols, passwordLength = 8) => {
+        generarContraseña: (includeMajus, includeNumbers, includeSymbols, passwordLength = store.slider) => {
             const includedSets = [lowerCase];
             if (includeMajus) includedSets.push(upperCase);
             if (includeNumbers) includedSets.push(numbers);
@@ -51,7 +51,7 @@ export const AppProvider = ({children}) => {
     
         return setValueContraseña(passwordArray.join(''));
         },
-        guardarContraseña: (includeMajus, includeNumbers, includeSymbols, valorContraseña) => {
+        guardarContraseña: (valorContraseña) => {
 
             const arrayContraseña = [...store.contraseñasSaved, valorContraseña];
 

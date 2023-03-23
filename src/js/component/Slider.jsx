@@ -17,13 +17,12 @@ const Slider = () => {
         min="8"
         max="18"
         step="1"
-        id="customRange3"
         value={store.slider}
         valueLabelDisplay="auto"
         getAriaValueText={store.slider}
         onChange={(e) => actions.handleChangeSlider(e.target.value)}
       ></input>
-      <output id="outputNumber" className="fs-4">{store.slider}</output>
+      <output id="outputNumber">{store.slider}</output>
     </form>
   );
 };

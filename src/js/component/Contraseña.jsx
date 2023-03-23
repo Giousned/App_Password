@@ -16,12 +16,7 @@ const Contraseña = () => {
         type="button"
         className="btn btn-success mt-1"
         onClick={() => {
-          actions.guardarContraseña(
-            store.includeMajus,
-            store.includeNumbers,
-            store.includeSymbols,
-            store.valueContraseña
-          );
+          actions.guardarContraseña(store.valueContraseña);
           navigate("/my-passwords");
         }}
       >

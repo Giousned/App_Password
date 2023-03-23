@@ -2,40 +2,53 @@
     General Styles
 */
 
-body{
+body {
     background-image: url("https://media0.giphy.com/media/fS9PCxQYG0ULu/giphy.gif");
     background-size: cover;
-    color: aliceblue;
+    color: azure;
 }
- .info{
+
+.info {
     background-color: green;
- }
-.list-group-item{
+}
+
+.list-group-item {
     font-size: 20px;
     width: 300px;
 }
 
-.form-check{
+.form-check {
     width: 200px;
     margin: auto;
 }
 
-.checkBoxContainer{
+.checkBoxContainer {
     display: block;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
 }
-.navbar,navbar-brand{
+
+.navbar, navbar-brand {
     background-color: black;
     color: white;
+}
 
-}
-.home{
+.btn {
     color: white;
 }
-.btn{
-    color: white;
+
+.home {
+    margin-left: 40px;
+}
+
+#outputNumber{
+    background: none;
+    font-size: 30px;
+    font-weight: 400;
+
+    color: red;
+    text-shadow: 0 0 10px #ed1c1c,0 0 20px #ed1c1c,0 0 30px #ed1c1c,0 0 40px #79001e,0 0 70px #79001e;
 }
