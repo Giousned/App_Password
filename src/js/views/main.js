@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../../styles/home.css";
-
 import Hero from "../component/Hero.jsx";
 import Options from "../component/Options.jsx";
 

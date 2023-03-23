@@ -1,13 +1,16 @@
 import React from "react";
 import { createContext, useContext, useState } from "react";
 
+
 const Context = createContext();
 
 export const AppProvider = ({children}) => {
+
     const [valueContraseña, setValueContraseña] = useState("");
     const [includeMajus, setIncludeMajus] = useState(false);
     const [includeNumbers, setIncludeNumbers] = useState(false);
     const [includeSymbols, setIncludeSymbols] = useState(false);
+    const [contraseñasSaved, setContraseñasSaved] = useState([]);
 
     
     const upperCase = Array.from({ length: 26 }, (_, i) => String.fromCharCode(i + 65));
@@ -20,7 +23,8 @@ export const AppProvider = ({children}) => {
         valueContraseña,
         includeMajus,
         includeNumbers,
-        includeSymbols
+        includeSymbols,
+        contraseñasSaved
     };
 
     const actions = {
@@ -44,6 +48,17 @@ export const AppProvider = ({children}) => {
             };
     
         return setValueContraseña(passwordArray.join(''));
+        },
+        guardarContraseña: (includeMajus, includeNumbers, includeSymbols, valorContraseña) => {
+
+            const arrayContraseña = [...store.contraseñasSaved, valorContraseña];
+
+            setValueContraseña("");
+            setIncludeMajus(false);
+            setIncludeNumbers(false);
+            setIncludeSymbols(false);
+
+            return setContraseñasSaved(arrayContraseña);
         }
     };
 
