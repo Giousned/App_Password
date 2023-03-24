@@ -34,7 +34,8 @@ export const AppProvider = ({children}) => {
         handleCheckSymbols: () => setIncludeSymbols(!includeSymbols),
         handleValueContraseña: (valorContraseña) => setValueContraseña(valorContraseña),
         handleChangeSlider: (valor) => setSlider(valor),
-        generarContraseña: (includeMajus, includeNumbers, includeSymbols, passwordLength = store.slider) => {
+        generarContraseña: (includeMajus, includeNumbers, includeSymbols) => {
+
             const includedSets = [lowerCase];
             if (includeMajus) includedSets.push(upperCase);
             if (includeNumbers) includedSets.push(numbers);
@@ -42,9 +43,9 @@ export const AppProvider = ({children}) => {
     
             const passwordArray = [];
     
-            for (let i = passwordLength; i > 0; i--) {
+            for (let i = store.slider; i > 0; i--) {
                 const randomSet = Math.floor(Math.random() * includedSets.length);
-                const randomChar = Math.floor(Math.random() * includedSets[randomSet].length);
+                const randomChar = Math.floor(Math.random() * includedSets[randomSet].length);                
     
                 passwordArray.push(includedSets[randomSet][randomChar]);
             };
@@ -61,6 +62,12 @@ export const AppProvider = ({children}) => {
             setIncludeSymbols(false);
 
             return setContraseñasSaved(arrayContraseña);
+        },
+        borrarContraseña: (passItem) => {
+
+            const newArray = store.contraseñasSaved.filter((item) => item != passItem);
+
+            setContraseñasSaved(newArray);
         }
     };
 

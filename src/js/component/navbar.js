@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <span className="home">Password excercise</span>
+        <span className="home">Password Excercise</span>
       </Link>
       <div className="ml-auto me-5">
         {LINKSNAVBAR.map((item, index) => {

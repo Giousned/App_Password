@@ -18,8 +18,8 @@ const Slider = () => {
         max="18"
         step="1"
         value={store.slider}
-        valueLabelDisplay="auto"
-        getAriaValueText={store.slider}
+        // valueLabelDisplay="auto"
+        // getAriaValueText={store.slider}
         onChange={(e) => actions.handleChangeSlider(e.target.value)}
       ></input>
       <output id="outputNumber">{store.slider}</output>
