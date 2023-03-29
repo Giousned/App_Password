@@ -11,8 +11,9 @@ const Checkbox = (props) => {
         <input
           className="form-check-input"
           type="checkbox"
-          onChange={props.handleCheckMajus ? props.handleCheckMajus : props.handleCheckNumbers ? props.handleCheckNumbers : props.handleCheckSymbols ? props.handleCheckSymbols : null}
-          checked={props.includeMajus ? props.includeMajus : props.includeNumbers ? props.includeNumbers : props.includeSymbols ? props.includeSymbols : null}
+          value={props.value}
+          onChange={props.handleClick}
+          checked={props.value}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           {props.label}
@@ -24,10 +25,7 @@ const Checkbox = (props) => {
 export default Checkbox;
 
 Checkbox.propTypes = {
-	includeMajus: PropTypes.bool,
-	includeNumbers: PropTypes.bool,
-	includeSymbols: PropTypes.bool,
-  handleCheckMajus: PropTypes.func,
-  handleCheckNumbers: PropTypes.func,
-  handleCheckSymbols: PropTypes.func,
+	value: PropTypes.bool,
+  handleClick: PropTypes.func,
+  label: PropTypes.string,
 };

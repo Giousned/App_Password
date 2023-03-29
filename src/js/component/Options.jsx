@@ -16,9 +16,9 @@ const Options = () => {
 
       <div className="d-block">
 
-          <Checkbox label="Incluir Mayúscula" handleCheckMajus={actions.handleCheckMajus} includeMajus={store.includeMajus} />
-          <Checkbox label="Incluir Números"  handleCheckNumbers={actions.handleCheckNumbers} includeNumbers={store.includeNumbers} />
-          <Checkbox label="Incluir Símbolos"  handleCheckSymbols={actions.handleCheckSymbols} includeSymbols={store.includeSymbols} />
+          <Checkbox label="Incluir Mayúscula" handleClick={actions.handleCheckMajus} value={store.includeMajus} />
+          <Checkbox label="Incluir Números"  handleClick={actions.handleCheckNumbers} value={store.includeNumbers} />
+          <Checkbox label="Incluir Símbolos"  handleClick={actions.handleCheckSymbols} value={store.includeSymbols} />
           
           <p placeholder="Contraseña" value={store.valueContraseña} onChange={() => actions.handleValueContraseña(store.valueContraseña)} ></p>
           <button type="button" className="btn btn-danger" onClick={() => actions.generarContraseña(store.includeMajus, store.includeNumbers, store.includeSymbols)} >Generar Contraseña</button>

@@ -10,7 +10,7 @@ const ListItem= (props) => {
     return(
         <div>
             <li className="list-group-item">{props.children}
-            <i onClick={() => actions.borrarContraseña(props.children)} class="fa-solid fa-trash ms-5"></i>
+            <i onClick={() => actions.borrarContraseña(props.children)} className="fa-solid fa-trash ms-5"></i>
             </li>
         </div>
     )
