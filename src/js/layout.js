@@ -23,7 +23,6 @@ const Layout = () => {
 						<Route path="/" element={<Main />} />
 						<Route path="/my-passwords" element={<MyPassword />} />
 
-						{/* <Route path="/single/:theid" element={<Single />} /> */}
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

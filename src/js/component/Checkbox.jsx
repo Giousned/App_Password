@@ -11,9 +11,9 @@ const Checkbox = (props) => {
         <input
           className="form-check-input"
           type="checkbox"
-          value={props.value}
+          value={props.valor}
           onChange={props.handleClick}
-          checked={props.value}
+          checked={props.valor}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           {props.label}

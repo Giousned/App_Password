@@ -13,8 +13,10 @@ export const MyPassword = () => {
 
 	return (
 		<div className="text-center mt-5">
+
 			<Hero title="Generador de Contraseñas" subtitle="Esta app guarda contraseñas y es super divertida!"/>
 			<h1>Contraseñas guardadas</h1>
+
 			{store.contraseñasSaved.map((item, index) => {
 				
 				return(

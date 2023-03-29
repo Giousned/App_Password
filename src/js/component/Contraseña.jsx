@@ -11,7 +11,9 @@ const Contraseña = () => {
 
   return (
     <div className="mt-3">
+
       <h2>Esta es tu contraseña: {store.valueContraseña}</h2>
+      
       <button
         type="button"
         className="btn btn-success mt-1"
